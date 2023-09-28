@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>My Notes</title>
+</head>
+<body>
+    <div class="pageError">
+        <div id="loader"></div>
+        <h1>404 Error</h1>
+        <span>please check your network connection...</span>
+    </div>
+    <div class="popup-box">
+        <div class="popup">
+            <div class="content">
+                <header>
+                    <p>Title</p>
+                    <i class="fas fa-times"></i>
+                </header>
+                <form action="#">
+                    <div class="row title">
+                        <label>Title</label>
+                        <input type="text" spellcheck="false">
+                      </div>
+                      <div class="row description">
+                        <label>Description</label>
+                        <textarea spellcheck="false"></textarea>
+                      </div>
+                      <button>Add Note</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <li class="add-box">
+            <div class="add">
+                <div class="icon">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <p>Add Note</p>
+            </div>
+            <div class="bottom">
+                <div class="settings">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete All</span>
+                </div>
+            </div>
+        </li>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
