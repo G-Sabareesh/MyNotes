@@ -39,6 +39,7 @@ function showNotes() {
         let liTag = `<li class="note">
                         <div class="details">
                             <p>${note.title}</p>
+                            <div class="line"></div>
                             <span>${filterDesc}</span>
                         </div>
                         <div class="bottom-content">
@@ -53,6 +54,7 @@ function showNotes() {
                         </div>
                     </li>`;
         addBox.insertAdjacentHTML("afterend", liTag);
+        // console.log(note.title, document.querySelector(".note .details p").clientHeight, document.querySelector(".bottom-content").clientHeight)
     });
 }
 
@@ -77,7 +79,7 @@ function updateNote(noteId, title, filterDesc) {
     let description = filterDesc.replaceAll('<br/>', '\r\n');
     updateId = noteId;
     isUpdate = true;
-    addBox.click();
+    popupBox.classList.add("show");
     titleTag.value = title;
     descTag.value = description;
     popupTitle.innerText = "Update a Note";
@@ -94,9 +96,9 @@ addBtn.addEventListener("click", e => {
             day = currentDate.getDate(),
             year = currentDate.getFullYear();
 
-        if (title.length > 15) {
-            title = title.slice(0, 15) + "..."
-        }
+        // if (title.length > 15) {
+        //     title = title.slice(0, 15) + "\n" + title.slice(15);
+        // }
         let noteInfo = { title, description, date: `${month} ${day}, ${year}` }
         if (!isUpdate) {
             notes.push(noteInfo);
