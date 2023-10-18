@@ -18,11 +18,11 @@ body {
   /* background: black; */
   display: none;
   gap: 15px;
-  grid-template-columns: repeat(auto-fill, 265px);
-  margin: 50px;
+  grid-template-columns: repeat(auto-fill, 300px);
+  margin: 20px;
 }
 .wrapper li {
-  height: 250px;
+  height: 290px;
   list-style: none;
   background-color: white;
   border-radius: 5px;
@@ -96,14 +96,19 @@ header,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-wrap: wrap;
   transition: transform 0.2s ease;
-  /* overflow: hidden; */
 }
-.note p {
+.note .details p {
+  word-wrap: break-word;
+  text-align: center;
+  /* background-color: cadetblue; */
   color: brown;
   font-size: 22px;
   font-weight: 600;
+}
+.note .details .line {
+  margin-top: 5px;
+  border-top: 1px dotted saddlebrown;
 }
 .note span {
   display: block;
@@ -111,7 +116,16 @@ header,
   color: brown;
   font-size: 16px;
 }
+.note .details span {
+  padding: 5px;
+  height: 170px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  /* background-color: blue; */
+}
 .note .bottom-content {
+  /* background-color: cadetblue;s */
+  margin-top: 5px;
   padding-top: 10px;
   border-top: 1.5px solid saddlebrown;
 }
