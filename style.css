@@ -154,7 +154,7 @@ header,
   transform-origin: bottom right;
   transition: transform 0.2s ease;
 }
-.settings.show .menu {
+.settings .show .menu {
   transform: scale(1);
 }
 .settings .menu li {
