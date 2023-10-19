@@ -99,7 +99,7 @@ addBtn.addEventListener("click", e => {
         // if (title.length > 15) {
         //     title = title.slice(0, 15) + "\n" + title.slice(15);
         // }
-        let noteInfo = { title, description, date: `${month} ${day}, ${year}` }
+        let noteInfo = { title, description, date: `${day} ${month} ${year}` }
         if (!isUpdate) {
             notes.push(noteInfo);
         } else {
@@ -119,6 +119,7 @@ function check() {
         showNotes();
     }
     else {
+        console.log("offline");
         document.querySelector('.wrapper').style.display = 'none';
         document.querySelector('.pageError').style.display = 'flex';
         document.querySelector('body').style.cursor = 'wait';
@@ -137,4 +138,16 @@ deleteAll.addEventListener('click', () => {
     }
 });
 
-document.onload = check();
+// document.onload = function () {
+//     document.addEventListener("DOMContentLoaded", function () {
+//         check();
+//     });
+// };
+
+function dom() {
+    document.addEventListener("DOMContentLoaded", () => {
+        check();
+    });
+}
+
+window.onload = dom();
