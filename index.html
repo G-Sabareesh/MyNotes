@@ -9,32 +9,44 @@
     <title>MyNotes</title>
 </head>
 <body>
+    <!-- Error page loader -->
     <div class="pageError">
         <div id="loader"></div>
         <h1>404 Error</h1>
         <span>please check your network connection...</span>
     </div>
+    <!-- Form content -->
     <div class="popup-box">
         <div class="popup">
             <div class="content">
                 <header>
-                    <p>Title</p>
+                    <p>Titles</p>
                     <i class="fas fa-times"></i>
                 </header>
-                <form action="#">
+                <form class="form">
                     <div class="row title">
-                        <label>Title</label>
-                        <input type="text" spellcheck="false" maxlength="15" placeholder="Maximum 15 character accepted">
+                        <label for="title">Title</label>
+                        <input type="text" autocomplete="off"  maxlength="15">
+                        <p></p>
                       </div>
                       <div class="row description">
                         <label>Description</label>
-                        <textarea spellcheck="false"></textarea>
+                        <textarea autocomplete="off"></textarea>
+                        <p></p>
                       </div>
-                      <button>Add Note</button>
+                      <input type="submit" value="Add Note" />
                 </form>
             </div>
         </div>
     </div>
+    <!-- Message content -->
+    <div class="actionMessage">
+        <div class="popupMessagebox">
+        <button class="close-button" id="closeButton">X</button>
+        <p class="popup-message" id="popupMessage">Successfully deleted</p>
+        </div>
+    </div>
+    <!-- Main notes content -->
     <div class="wrapper">
         <li class="add-box">
             <div class="add">
