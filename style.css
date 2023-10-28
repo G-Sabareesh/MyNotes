@@ -15,7 +15,6 @@ body {
 }
 /* CSS to style the main container */
 .wrapper {
-  /* background: black; */
   display: none;
   gap: 15px;
   grid-template-columns: repeat(auto-fill, 300px);
@@ -40,7 +39,6 @@ body {
 .popup,
 header,
 .bottom {
-  /* background: blue; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,19 +78,12 @@ header,
   position: relative;
   justify-content: right;
   width: 100%;
-  /* background-color: black; */
 }
 .bottom .settings span {
   padding-left: 10px;
 }
-/* .wrapper .note:hover {
-  background: wheat;
-  height: fit-content;
-  width: fit-content;
-  transform: scale(1.1);
-} */
+/* CSS style to .note it style the new note added with js */
 .wrapper .note {
-  /* background-color: black; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -101,7 +92,6 @@ header,
 .note .details p {
   word-wrap: break-word;
   text-align: center;
-  /* background-color: cadetblue; */
   color: brown;
   font-size: 22px;
   font-weight: 600;
@@ -121,10 +111,8 @@ header,
   height: 170px;
   overflow-y: auto;
   word-wrap: break-word;
-  /* background-color: blue; */
 }
 .note .bottom-content {
-  /* background-color: cadetblue;s */
   margin-top: 5px;
   padding-top: 10px;
   border-top: 1.5px solid saddlebrown;
@@ -154,7 +142,7 @@ header,
   transform-origin: bottom right;
   transition: transform 0.2s ease;
 }
-.settings .show .menu {
+.settings.show .menu {
   transform: scale(1);
 }
 .settings .menu li {
@@ -215,7 +203,6 @@ header,
   border-bottom: 1px solid brown;
 }
 .content header p {
-  /* background-color: blue; */
   color: brown;
   font-weight: 700;
   font-size: 20px;
@@ -227,6 +214,7 @@ header,
 }
 .content form {
   margin: 15px 25px 35px;
+  z-index: 99;
 }
 .content form .row {
   margin-bottom: 20px;
@@ -238,7 +226,7 @@ form .row label {
   color: brown;
   margin-bottom: 6px;
 }
-.content form :where(input, textarea) {
+.content form :where(input[type="text"], textarea) {
   width: 100%;
   height: 50px;
   outline: none;
@@ -252,10 +240,10 @@ form .row label {
   resize: none;
   padding: 8px 15px;
 }
-.content form button {
+.content form input[type="submit"] {
   width: 100%;
   height: 50px;
-  /* outline: none; */
+  outline: none;
   color: brown;
   font-size: large;
   font-weight: 600;
@@ -265,17 +253,16 @@ form .row label {
   border: 1px solid brown;
   transition: transform 0.2s ease;
 }
-.content form button:hover {
+.content form input[type="submit"]:hover {
   background: wheat;
   transform: scale(1.1);
 }
-.content form input,
+.content form input[type="text"],
 textarea {
   color: brown;
   font-size: large;
   font-weight: 500;
 }
-
 /* CSS style to 404 page error */
 .pageError {
   display: none;
@@ -309,4 +296,65 @@ textarea {
     border-bottom: 5px solid brown;
     border-top: 5px solid brown;
   }
+}
+
+/* CSS to style the error and success message in the input field*/
+.title.error p,
+.description.error p {
+  padding-top: 10px;
+  color: #ff2d4d;
+}
+.title.error input,
+.description.error textarea {
+  border: 2px solid #ff2d4d;
+  transition: all 1s ease;
+}
+
+.row.success {
+  color: #0ab967;
+}
+.description.success textarea,
+.title.success input {
+  border: 2px solid #0ab967;
+  transition: all 1s ease;
+}
+/* CSS to style the popup Message with close button */
+.actionMessage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: right;
+}
+.popupMessagebox {
+  display: none;
+  position: absolute;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+  color: black;
+  margin: 10px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 5px;
+  border: 0.5px solid rgba(0, 0, 0, 0.671);
+  z-index: 999;
+}
+#closeButton {
+  cursor: pointer;
+  font-size: medium;
+  font-weight: bolder;
+  background-color: #e9e5e5a6;
+  color: rgba(240, 64, 64, 0.932);
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.5px solid #000000;
+}
+#popupMessage {
+  background-color: #e9e5e56e;
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  font-style: normal;
 }
